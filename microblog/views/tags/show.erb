@@ -1,0 +1,31 @@
+<h2><%= @tag.name %> </h2>
+<div style="width:95%; margin: 0 auto; ">
+<% @tag.posts.each do |post| %>
+  <div class="tag post">
+    <h4> 
+      <a href="/posts/<%= post.id %>"><%= post.title %> </a>
+      <span>
+        <form action="/tags/<%= @tag.id %>/remove_post" method="post">
+          <input type="hidden" name="_method" value="put">
+          <input type="hidden" name="post_id" value="<%= post.id %>">
+          <input type="submit" value="Remove">
+        </form>
+      </span>
+    </h4>
+  </div>
+<% end %>
+<p>
+</div>
+ <form action="/tags/<%= @tag.id %>/add_post" method="post">
+  <input type="hidden" name="_method" value="put">
+    <select name="post_id">
+      <% @posts.each do |post| %>
+        <option value="<%= post.id %>"><%= post.title %></option>
+      <% end %>
+    </select>
+    <input type="submit" value="Add post">
+  </form>
+  </p>
+  <p>
+  <a href="/tags">BACK TO TAGS</a>
+  </p>

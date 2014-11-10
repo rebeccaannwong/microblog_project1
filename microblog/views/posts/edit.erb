@@ -1,0 +1,28 @@
+<h3>EDIT POST</h3>
+<form action="/posts/<%= @post.id %>" method="POST">
+	<input type="hidden" name="_method" value="PUT">
+
+	<label for="title">Title<br>
+		<input type="text" name="post[title]" value="<%= @post.title %>">
+	</label><br>
+
+	<label for="user">User<br>
+		<select name="post[user_id]">
+			<% @users.each do |user| %>
+				<option <%= "selected" if user == @post.user %> value="<%= user.id %>"><%= user.name %></option>
+			<% end %>
+		</select>
+	</label><br>
+
+	<label for="content">Content<br>
+		<input type="text" name="post[content]" value="<%= @post.content %>">
+	</label><br>
+
+
+	<input type="submit" name="submit">
+</form>
+
+<form action="/posts/<%= @post.id %>" method="POST">
+	<input type="hidden" name="_method" value="DELETE">
+	<button>DELETE</button>
+</form>

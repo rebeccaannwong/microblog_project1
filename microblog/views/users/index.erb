@@ -1,0 +1,16 @@
+<p><a href="/users/new">CREATE USER</a></p>
+
+<% @users.each do |user| %>
+	<div id="user">
+		<h1><%= user.name %></h1>
+			<img src="<%= user.avatar %>" width=100>
+			<div class="userinfo">
+				Joined <%= user.date_joined %> <p>
+				 <%= user.location %> <p>
+				 <%= user.bio %><p>
+				<a href="/users/<%= user.id %>">VIEW</a>
+			</div>
+			</p>
+	</div>
+<% end %>
+

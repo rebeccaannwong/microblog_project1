@@ -1,0 +1,16 @@
+<div class="post">
+	<h2><%= @post.title %></h2>
+	<h4>By <a href="/users/<%= @post.user.id %>"><%= @post.user.name %></a></h4>
+		<img src= "<%= @post.user.avatar %>" alt="">
+		<p>
+		<%= @post.content %>
+	</p>
+
+<% @post.tags.each do |tag| %>
+
+    <form action="/tags/<%= tag.id %>" method="GET">
+		<input type="submit" value="<%= tag.name %>">
+				</form>  
+<% end %>	  
+</div>
+<br><a href="/posts/<%= @post.id %>/edit">EDIT</a>

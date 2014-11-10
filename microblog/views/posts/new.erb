@@ -1,0 +1,31 @@
+<h3>NEW POST</h3>
+<form action="/posts" method="POST">
+	
+	<label for="title">Title<br>
+		<input type="text" name="post[title]">
+	</label><br>
+
+	<label for="user">User<br>
+		<select name="post[user_id]">
+			<% @users.each do |user| %>
+				<option value="<%= user.id %>"><%= user.name %></option>
+			<% end %>
+		</select>   
+		<p>OR </p>
+		<p><a href="/users/new">Create new user</a></p>
+	</label><p>
+
+	<label for="content">Content<br>
+		<input type="text" name="post[content]">
+	</label><br>
+
+	<label for="tags">Tags<br>
+  <% @tags.each do |tag| %>
+  <input type="checkbox" name="tag_id[]" value="<%= tag.id %>"><%= tag.name %><br/>
+  </label>
+  <% end %>
+  
+	<input type="submit" name="Submit">
+
+</form>
+

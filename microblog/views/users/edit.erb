@@ -1,0 +1,32 @@
+<h3>EDIT USER</h3>
+<form action="/users/<%= @user.id %>" method="POST">
+	<input type="hidden" name="_method" value="PUT">
+
+	<label for="name">Name<br>
+		<input type="text" name="user[name]" value="<%= @user.name %>">
+	</label><br>
+
+	<label for="avatar">Avatar<br>
+		<input type="text" name="user[avatar]" value="<%= @user.avatar %>">
+	</label><br>
+
+	<label for="date_joined">Date Joined<br>
+		<input type="text" name="user[date_joined]" value="<%= @user.date_joined %>">
+	</label><br>
+
+	<label for="location">Location<br>
+		<input type="text" name="user[location]" value="<%= @user.location %>">
+	</label><br>
+
+		<label for="bio">Biography<br>
+		<input type="text" name="user[bio]" value="<%= @user.bio %>">
+		</label><br>
+
+		<input type="submit" name="submit">
+</form>
+
+
+<form action="/users/<%= @user.id %>" method="POST">
+	<input type="hidden" name="_method" value="DELETE">
+	<button>DELETE</button>
+</form>
