@@ -47,11 +47,12 @@ put '/users/:id' do
 end
 
 #DESTROY
-delete('/users/:id') do
-  user = User.find(params[:id]) 
+delete '/users/:id' do
+  user = User.find(params[:id])
   if user.destroy
-    redirect("/users")
+    redirect('/users')
   else
     redirect("/users/#{user.id}")
   end
 end
+

@@ -1,15 +1,30 @@
-<div id="user">
-<h1><%= @user.name %></h1>
-<p><img src="<%= @user.avatar %>" width=400 ></p>
-<p><%= @user.date_joined %></p>
-<p><%= @user.location %></p>
-<p><%= @user.bio %></p>
 
-<a href="/users/<%= @user.id %>/edit">EDIT</a><p>
-
-<% @user.posts.each do |post| %>
-		<h2><%= post.title %></h2>
-		<h4><%= post.user.name %></h4>
-		<a href="/posts/<%= post.id %>">VIEW POST</a>
+<div id= "create">
+<a href="/users/<%= @user.id %>/edit">EDIT USER</a>
 </div>
-<% end %>
+
+<section class="singleuser">
+
+	<figure id ="singleuseravatar">
+	<img src="<%= @user.avatar %>" style="width:500px" >
+	</figure>
+
+
+	<h1 style="width: 500px">
+		<%= @user.name %>
+	</h1>
+	
+
+	<div id="userinfo" style= "text-align:center; width:500px">
+	<p>Joined <%= @user.date_joined %></p>
+	<p><%= @user.location %></p>
+	<p><%= @user.bio %></p>
+	</div>
+
+	<div id="userposts" style="width:500px">
+	<% @user.posts.each do |post| %>
+		<a href="/posts/<%= post.id %>"><%= post.title %></a><br>
+	<% end %>	  
+		</div>
+
+</section>

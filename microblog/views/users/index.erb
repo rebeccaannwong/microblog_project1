@@ -1,16 +1,27 @@
-<p><a href="/users/new">CREATE USER</a></p>
+<div id= "create">
+	<a href="/users/new">CREATE USER</a>
+</div>
 
 <% @users.each do |user| %>
-	<div id="user">
-		<h1><%= user.name %></h1>
-			<img src="<%= user.avatar %>" width=100>
-			<div class="userinfo">
-				Joined <%= user.date_joined %> <p>
-				 <%= user.location %> <p>
-				 <%= user.bio %><p>
-				<a href="/users/<%= user.id %>">VIEW</a>
-			</div>
-			</p>
+	
+
+	<div class="user">
+
+			<figure class= "useravatar">
+			<img src="<%= user.avatar %>" style="width: 250px;">
+			</figure>
+			
+			<article class="username" style="width: 250px;">
+				<a href="/users/<%= user.id %>"><%= user.name.upcase %></a>
+			</article>
+			
+			<h3>
+				<br>Joined <%= user.date_joined %> </br>
+				<br><%= user.location %></br>
+				<br><%= user.bio %></br>
+			</h3>
+
 	</div>
+
 <% end %>
 

@@ -1,9 +1,13 @@
-<h3>NEW POST</h3>
+<div id= "create">
+	NEW POST
+</div>
+
+<div id= "form">
 <form action="/posts" method="POST">
 	
 	<label for="title">Title<br>
 		<input type="text" name="post[title]">
-	</label><br>
+	</label><p>
 
 	<label for="user">User<br>
 		<select name="post[user_id]">
@@ -11,21 +15,22 @@
 				<option value="<%= user.id %>"><%= user.name %></option>
 			<% end %>
 		</select>   
-		<p>OR </p>
-		<p><a href="/users/new">Create new user</a></p>
+		or
+		<a href="/users/new">Create New User</a>
 	</label><p>
 
 	<label for="content">Content<br>
 		<input type="text" name="post[content]">
-	</label><br>
+	</label><p>
 
 	<label for="tags">Tags<br>
   <% @tags.each do |tag| %>
   <input type="checkbox" name="tag_id[]" value="<%= tag.id %>"><%= tag.name %><br/>
   </label>
   <% end %>
-  
+  <p>
 	<input type="submit" name="Submit">
 
 </form>
+</div>
 

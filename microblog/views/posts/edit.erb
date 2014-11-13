@@ -1,10 +1,20 @@
-<h3>EDIT POST</h3>
+<div id= "create">
+	<a href="/posts/<%= @post.id %>/edit">EDIT POST</a>
+</div>
+
+
+<div id= "form">
 <form action="/posts/<%= @post.id %>" method="POST">
 	<input type="hidden" name="_method" value="PUT">
 
 	<label for="title">Title<br>
 		<input type="text" name="post[title]" value="<%= @post.title %>">
-	</label><br>
+	</label><p>
+
+
+	<label for="image">Image<br>
+		<input type="text" name="post[image]" value="<%= @post.image %>">
+	</label><p>
 
 	<label for="user">User<br>
 		<select name="post[user_id]">
@@ -12,17 +22,18 @@
 				<option <%= "selected" if user == @post.user %> value="<%= user.id %>"><%= user.name %></option>
 			<% end %>
 		</select>
-	</label><br>
+	</label><p>
 
 	<label for="content">Content<br>
 		<input type="text" name="post[content]" value="<%= @post.content %>">
-	</label><br>
+	</label><p>
 
 
-	<input type="submit" name="submit">
+	<input type="submit" name="SUBMIT">
+
 </form>
 
 <form action="/posts/<%= @post.id %>" method="POST">
 	<input type="hidden" name="_method" value="DELETE">
-	<button>DELETE</button>
+	<button>Delete</button>
 </form>

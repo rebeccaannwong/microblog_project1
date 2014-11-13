@@ -16,6 +16,7 @@ CREATE TABLE users(
 CREATE TABLE posts(
 	id serial primary key,
 	title varchar(255) not null,
+	image text,
 	content text,
 	user_id integer references users,
 	created_at TIMESTAMP

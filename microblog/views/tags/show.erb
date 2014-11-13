@@ -1,9 +1,13 @@
-<h2><%= @tag.name %> </h2>
-<div style="width:95%; margin: 0 auto; ">
+<div id= "create">
+  <%= @tag.name.upcase %> </a>
+</div>
+
+
+<section class="singletag">
+
+<div class="tagpost">
 <% @tag.posts.each do |post| %>
-  <div class="tag post">
-    <h4> 
-      <a href="/posts/<%= post.id %>"><%= post.title %> </a>
+  <a href="/posts/<%= post.id %>"><%= post.title %> </a>
       <span>
         <form action="/tags/<%= @tag.id %>/remove_post" method="post">
           <input type="hidden" name="_method" value="put">
@@ -11,11 +15,12 @@
           <input type="submit" value="Remove">
         </form>
       </span>
-    </h4>
+    <% end %>
   </div>
-<% end %>
+
 <p>
-</div>
+
+<div id="form">
  <form action="/tags/<%= @tag.id %>/add_post" method="post">
   <input type="hidden" name="_method" value="put">
     <select name="post_id">
@@ -23,9 +28,9 @@
         <option value="<%= post.id %>"><%= post.title %></option>
       <% end %>
     </select>
-    <input type="submit" value="Add post">
+    <input type="submit" value="Add Post">
   </form>
-  </p>
-  <p>
-  <a href="/tags">BACK TO TAGS</a>
-  </p>
+  </div>
+
+
+</section>

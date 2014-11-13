@@ -1,9 +1,29 @@
-<p><a href="/posts/new">ADD POST</a></p>
+<div id= "create">
+	<a href="/posts/new">CREATE POST</a>
+</div>
 
 <% @posts.each do |post| %>
-	<div class="post">
-		<h2><%= post.id %> | <%= post.title %></h2>
-		<p><%= post.user.name %></p>
-		<a href="/posts/<%= post.id %>">View</a>
-	</div>
+
+		<div class="post">
+		<img src="<%= post.image %>" style="width: 250px; height: 250px"> 
+
+		<h1>
+		<a href="/posts/<%= post.id %> "><%= post.title %></a>
+		</h1>
+
+		<h2>
+
+		<figure class ="postavatar">
+		<p><a href="/users/<%= post.user.id %>"><img src="<%= post.user.avatar %>" style="width: 50px; height: 50px; border-radius: 50%;">
+		</a></p>
+		</figure>
+
+		<span class ="postinfo">
+		<a href="/users/<%= post.user.id %>"><%= post.user.name %></a><br>
+		<%= post.created_at %>
+		</span>
+		</h2>
+
+		</div>
+		
 <% end %>

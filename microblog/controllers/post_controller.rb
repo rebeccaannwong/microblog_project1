@@ -51,8 +51,8 @@ end
 
 # DESTROY
 delete '/posts/:id' do
-	micropost = Post.find(params[:id])
-	if micropost.destroy
+	post = Post.find(params[:id])
+	if post.destroy
 		redirect('/posts')
 	else
 		redirect("/posts/#{post.id}")

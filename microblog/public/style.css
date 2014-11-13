@@ -1,8 +1,77 @@
-@import url(http://fonts.googleapis.com/css?family=Mako);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
 
-body{
-	font-family: Mako;
+/*CSS reset*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*CSS starts*/
+
+header {
+	margin: 0px 0 0 0px;
+	border: none;
+}	
+
+#nav {
+	position: absolute;
+  top: 70px;
+  left: 450px;
+}
+
+body {
+	background: white;
+	background-size: 100%;
+	font-family: Source Sans Pro;
 	font-weight: 300;
+}
+
+#create {
+	position: absolute;
+  top: 200px;
+	text-align: center;
+	background: lightgrey;
+	width: 100%;
+	font-size: 16px
 }
 
 a {
@@ -11,50 +80,120 @@ a {
 }
 
 a:hover {
-  color: #FF00FF;
+  color: white;
 }
 
-.header {
-	position: fixed;
-	margin: 0px 0 0 0px;
-  height: 50px;
-  width: 100%;
-}
-
-#nav {
- 	margin: 10px 0 0 0px;
-	color: black;
-	height: 0px;
-	text-align: center;
-	font-size: 24px;
-}
 
 #content {
+	height: 100%;
+	text-align: left;
+}
+
+/*USER CSS*/
+
+div .user {
+	float:left;
+	width: 250px;
+	margin: 30px;
+}
+
+.username {
+	background: silver;
 	text-align: center;
-	margin: 50px 0 0 0px;
+	font-size: 18px;
+	margin-top: -2px
+}
+ 
+h3 {
+	border-style: dashed;
+  border-width: 1px;
+	border-color: silver;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	font-size: 14px;
+	text-align: center;
 }
 
-.nav a, .nav a:visited {
-	text-decoration: none;
-	color: black;
+
+.singleuser {
+	margin-left: 30%;
+	margin-top: 20px
 }
 
-#user {
+#userinfo {
+	border-style: solid;
+  border-width: 1px;
+	border-color: silver;
+}
+
+#userposts {
+	border-style: dashed;
+  border-width: 1px;
+	border-color: silver; 
+}
+
+
+
+/*POST CSS*/
+
+div .post {
+	float:left;
+	margin: 30px;
+}
+
+h1 {
+	background: silver;
+	text-align: center;
+	font-size: 18px;
+	margin-top: -2px
+}
+
+h2 {
+	border-style: dashed;
+  border-width: 1px;
+	border-color: silver;
+}
+
+.postavatar {
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.postinfo {
 	position: relative;
-	margin: 0px 0 0 200px;
-	text-align: center;
-	width: 850px;
-	border: 10px solid white;
-	border-radius: 5px;
-	background: whitesmoke;
+	top: -40px;
+	left: 80px;
 }
 
-.post {
-	position: relative;
-	margin: 0px 0 0 200px;
-	text-align: center;
-	width: 850px;
-	border: 10px solid white;
-	border-radius: 5px;
-	background: whitesmoke;
+.singlepost {
+	margin-left: 30%;
+	margin-top: 20px
 }
+
+
+/*FORM CSS*/
+
+#form {
+	margin-left: 40%;
+	margin-top: 50px;
+	padding: 10px;
+  width: 400px;
+}
+
+/*TAGS CSS*/
+div .tag {
+	margin-top: 20px;	
+}
+
+.singletag {
+	margin-top: 20px
+}
+
+.tagpost {
+	text-align: center;	
+	margin-top: 20px
+}
+
+
+
+

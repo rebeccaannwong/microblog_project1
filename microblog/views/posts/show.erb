@@ -1,16 +1,36 @@
-<div class="post">
-	<h2><%= @post.title %></h2>
-	<h4>By <a href="/users/<%= @post.user.id %>"><%= @post.user.name %></a></h4>
-		<img src= "<%= @post.user.avatar %>" alt="">
-		<p>
-		<%= @post.content %>
-	</p>
+<div id= "create">
+	<a href="/posts/<%= @post.id %>/edit">EDIT POST</a>
+</div>
 
-<% @post.tags.each do |tag| %>
+<section class="singlepost">
 
+	<figure id ="singlepostimg">
+	<img src="<%= @post.image %>" style="width: 500px">
+	</figure>
+
+	<h1 style="width: 500px">
+		<%= @post.title %>
+	</h1>
+	
+	<h2 style= "width:500px">
+	<article style = "text-align:center">
+	<%= @post.content %>
+	</article>
+
+	<figure class ="postavatar">	
+	<img src= "<%= @post.user.avatar %>" alt="" style="width: 50px; height: 50px; border-radius: 50%;">
+	</figure>
+
+	<span class ="postinfo">
+	<a href="/users/<%= @post.user.id %>"><%= @post.user.name %></a>
+	<br><%= @post.created_at %>
+	</span>	
+	</h2>
+	
+	<p><% @post.tags.each do |tag| %></p>
     <form action="/tags/<%= tag.id %>" method="GET">
 		<input type="submit" value="<%= tag.name %>">
-				</form>  
+		</form>  
+
 <% end %>	  
-</div>
-<br><a href="/posts/<%= @post.id %>/edit">EDIT</a>
+</section>
